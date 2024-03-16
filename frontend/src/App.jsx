@@ -22,7 +22,7 @@ const App = () => {
       
       <Routes>
         <Route path="/" element={<WithNavbarFooter><Home /></WithNavbarFooter>} />
-        <Route path="/single" element={<WithNavbarFooter><Single /></WithNavbarFooter>} />
+        <Route path="/post/:id" element={<WithNavbarFooter><Single /></WithNavbarFooter>} />
         <Route path="/write" element={<WithNavbarFooter><Write /></WithNavbarFooter>} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
