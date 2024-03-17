@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 // import Logo from "../../img/logo.png";
-import Logo from '../../img/my-logo.png'
+import Logo from '../../img/Blog-logo.jpeg'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -32,7 +32,10 @@ const Navbar = () => {
           <Link className="link" to="/?cat=food">
             <h6>FOOD</h6>
           </Link>
-          <span>john</span>
+          <div className="div profile">
+               <span>john</span>
+          </div>
+          
            
             <span >Logout</span>
           
