@@ -1,0 +1,33 @@
+.menu h1{
+    font-size: 20px;
+    color: #555;
+  }
+
+  .menu posts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  button {
+    width: max-content;
+    padding: 7.5px 15px;
+    border: none;
+    cursor: pointer;
+    color: teal;
+    background-color: white;
+    border: 1px solid teal;
+
+    &:hover {
+      border: 1px solid white;
+      background-color: lightGreen;
+      color: black;
+    }
+
+}
