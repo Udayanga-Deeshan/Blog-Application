@@ -1,9 +1,14 @@
-const express = require('express')
+import express from "express"
+import cors from "cors"
+import mysql from "mysql"
 const app = express();
-const cors = require('cors')
-const mysql = require('mysql')
+// const cors = require('cors')
+// const mysql = require('mysql')
+import  postRoutes from './routes/posts.js'
+
 
 app.use(cors())
+app.use(express.json())
 
 const db = mysql.createConnection({
     host:"localhost",
@@ -12,9 +17,11 @@ const db = mysql.createConnection({
     database:"test"
 })
 
-app.get('/',(req,res)=>{
-    res.json("hello form backend")
-})
+// app.get('/',(req,res)=>{
+//     res.json("hello form backend")
+// })
+
+app.use('/api/posts',postRoutes)
 
 let isDBConnected = false;
 
