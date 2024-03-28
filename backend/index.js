@@ -1,38 +1,29 @@
 import express from "express"
 import cors from "cors"
-import mysql from "mysql"
+import { db } from "./db.js";
 const app = express();
 // const cors = require('cors')
 // const mysql = require('mysql')
 import  postRoutes from './routes/posts.js'
+import  authRoutes from './routes/auth.js'
+import  userRoutes from './routes/users.js'
 
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json());
 
-const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"root123",
-    database:"test"
-})
+
 
 // app.get('/',(req,res)=>{
 //     res.json("hello form backend")
 // })
 
+app.use('/api/users',userRoutes)
+app.use('/api/auth',authRoutes)
+
 app.use('/api/posts',postRoutes)
 
-let isDBConnected = false;
 
-db.connect((err) => {
-    if (err) {
-        console.error("Error connecting to MySQL:", err.message);
-    } else {
-        isDBConnected = true;
-        console.log("Connected to MySQL server");
-    }
-});
 
 app.get('/students', (req, res) => {
     if (!isDBConnected) {

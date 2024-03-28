@@ -1,10 +1,11 @@
 import express from "express"
-import { addPost } from "../controllers/posts.js"
+import {addPost} from '../controllers/posts.js'
+
 
 const router = express.Router()
+ router.get("/",addPost)
 
 
-router.get("/",addPost)
 
 
 
