@@ -7,10 +7,12 @@ const app = express();
 import  postRoutes from './routes/posts.js'
 import  authRoutes from './routes/auth.js'
 import  userRoutes from './routes/users.js'
+import cookieParser from "cookie-parser";
 
 
 app.use(cors())
 app.use(express.json());
+app.use(cookieParser())
 
 
 
@@ -18,12 +20,14 @@ app.use(express.json());
 //     res.json("hello form backend")
 // })
 
-app.use('/api/users',userRoutes)
+// app.use('/api/users',userRoutes)
 app.use('/api/auth',authRoutes)
 
-app.use('/api/posts',postRoutes)
+// app.use('/api/posts',postRoutes)
 
-
+// app.get('/api/test',(req,res)=>{
+//         console.log("hello world");
+// })
 
 app.get('/students', (req, res) => {
     if (!isDBConnected) {
