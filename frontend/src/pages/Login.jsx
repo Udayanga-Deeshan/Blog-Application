@@ -23,7 +23,7 @@ const Login = () => {
     try{
       console.log("work");
       const res = await axios.post("http://localhost:4000/api/auth/login",inputs)
-      // console.log(res);
+      console.log(res);
       navigate("/");
 
     }catch(err){
@@ -35,8 +35,8 @@ const Login = () => {
     <div className='login'> 
       <h1> Login</h1>
       <form action="">
-        <input type="text" placeholder='username' required name='username' onChange={handleChange}/>
-        <input type="text" placeholder='Password'  required name='password' onChange={handleChange}/>
+        <input type="text" placeholder='username' name='username' onChange={handleChange} required />
+        <input type="password" placeholder='Password' name='password' onChange={handleChange} required />
         <button onClick={handleSubmit}>Login</button>
         {err && <p>{err}</p>}
         <span>Don't you have an Account? <Link to ='/register'>Register</Link></span>
